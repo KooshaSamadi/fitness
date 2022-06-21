@@ -8,7 +8,7 @@ function Homepage() {
   const myRef = useRef();
   return (
     <section className="container-xxl">
-      <HeroBanner myRef={myRef}/>
+      <HeroBanner myRef={myRef} />
       <SearchExercises />
       <SwiperCarousel myRef={myRef} />
       <Exercises myRef={myRef} />

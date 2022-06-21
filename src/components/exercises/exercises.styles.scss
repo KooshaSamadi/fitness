@@ -1,5 +1,10 @@
 .exercises-container {
   margin-top: 2rem;
+  .exercises-container-firstDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .exercises-pagination {
     display: flex;
     justify-content: center;

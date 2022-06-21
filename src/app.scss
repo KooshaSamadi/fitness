@@ -12,4 +12,10 @@
       color: black;
     }
   }
+  button {
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
 }

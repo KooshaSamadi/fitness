@@ -11,22 +11,21 @@ export const ExercisesProvider = ({ children }) => {
   const [allExercise, setAllExercise] = useState([]);
   const [filteredExercises, setFilteredExercises] = useState([]);
 
-  //   useEffect(() => {
-  //     const fetchBodyParts = async () => {
-  //       const data = await fetchAllBodyparts();
-  //       setBodyParts(data);
-  //     };
-  //     fetchBodyParts();
-  //   }, []);
-  
-  // useEffect(() => {
-  //   const fetchExercises = async () => {
-  //     const data = await fetchAllExercies();
-  //     setAllExercise(data);
-  //   };
-  //   fetchExercises();
-  // }, []);
+  useEffect(() => {
+    const fetchBodyParts = async () => {
+      const data = await fetchAllBodyparts();
+      setBodyParts(data);
+    };
+    fetchBodyParts();
+  }, []);
 
+  useEffect(() => {
+    const fetchExercises = async () => {
+      const data = await fetchAllExercies();
+      setAllExercise(data);
+    };
+    fetchExercises();
+  }, []);
 
   const value = {
     bodyParts,

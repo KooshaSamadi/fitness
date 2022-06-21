@@ -23,18 +23,6 @@ function SwiperCarousel({ myRef }) {
     });
   };
 
-  const altArray = [
-    "back",
-    "cardio",
-    "chest",
-    "lower arms",
-    "lower legs",
-    "neck",
-    "shoulders",
-    "upper arms",
-    "upper legs",
-    "waist",
-  ];
   return (
     <section className="swiper-carousel container">
       <Swiper
@@ -53,8 +41,8 @@ function SwiperCarousel({ myRef }) {
         // onSwiper={(swiper) => console.log(swiper)}
         // onSlideChange={() => console.log("slide change")}
       >
-        {altArray &&
-          altArray.map((bpart, index) => (
+        {bodyParts &&
+          bodyParts.map((bpart, index) => (
             <SwiperSlide
               key={index}
               onClick={() => swiperBodyPartHandler(bpart)}
