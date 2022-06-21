@@ -1,0 +1,45 @@
+.exercise-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+  .exercise-info-gif {
+    img {
+      width: 30rem;
+    }
+  }
+  .exercis-info-detail {
+    h2 {
+      text-align: center;
+    }
+    .exercis-info-detail-p {
+      margin-top: 1rem;
+      line-height: 2rem;
+      padding: 1rem 2rem;
+      width: 100%;
+      text-align: center;
+    }
+    .exercis-info-detail-icons {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      div {
+        margin: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          margin-right: 1rem;
+        }
+        p {
+          color: #e30b0b;
+          font-weight: 500;
+          margin: 0rem;
+          font-size: 17px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

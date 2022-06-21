@@ -1,6 +1,5 @@
 import React from "react";
 import "./app.scss";
-import { Box } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
 import Homepage from "./pages/homepage/homepage.pages";
 import ExerciseDetail from "./pages/exerciseDetail/exerciseDetail.pages";

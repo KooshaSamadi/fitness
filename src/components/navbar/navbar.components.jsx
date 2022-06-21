@@ -10,7 +10,10 @@ function Navbar() {
         <div className="left-navbar">
           <div className="navbar_image_container">
             <Link to="/">
-              <img src="https://img.icons8.com/ios-glyphs/60/undefined/gum-.png" />
+              <img
+                src="https://img.icons8.com/ios-glyphs/60/undefined/gum-.png"
+                alt="website logo"
+              />
             </Link>
           </div>
           <div className="navbar_links">

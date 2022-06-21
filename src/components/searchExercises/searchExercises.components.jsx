@@ -1,16 +1,14 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useContext } from "react";
+import { ExercisesContext } from "../../contexts/exercises/exersices.contexts";
 import "./searchExercises.styles.scss";
-import {
-  fetchAllExercies,
-  fetchAllBodyparts,
-  fetchData,
-} from "../../utils/fetchData";
+
 function SearchExercises() {
   //states
   const [searchInput, setSearchInput] = useState("");
-  const [bodyParts, setBodyParts] = useState([]);
-  const [allExercise, setAllExercise] = useState([]);
-  const [filteredExercises, setFilteredExercises] = useState([]);
+  const { allExercise, filteredExercises, setFilteredExercises } =
+    useContext(ExercisesContext);
+
+  //console.log(filteredExercises);
   //console.log(allExercise);
   //functions
   const inputHandler = ({ target: { value } }) => {
@@ -18,7 +16,6 @@ function SearchExercises() {
   };
   const searchHanler = async () => {
     if (searchInput) {
-      setAllExercise(await fetchAllExercies());
       const filteredData = allExercise.filter(
         (exercise) =>
           exercise.name.toLocaleLowerCase().includes(searchInput) ||
@@ -30,20 +27,12 @@ function SearchExercises() {
     }
   };
 
-  useEffect(() => {
-    const fetchBodyParts = async () => {
-      const data = await fetchAllBodyparts();
-      setBodyParts(data);
-    };
-    fetchBodyParts();
-  }, []);
-
   return (
     <section className="search-exercises container">
       <h2>
-        Awesome Exersices You <br /> Should Know
+        Awesome Exersices You <br />
+        <span>Should Know</span>
       </h2>
-
       <div className="input-group mb-3 search-exercises-input">
         <input
           type="text"
