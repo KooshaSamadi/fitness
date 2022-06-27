@@ -8,12 +8,15 @@ function Exercises({ myRef }) {
   //context
   const { filteredExercises, allExercise, setFilteredExercises } =
     useContext(ExercisesContext);
-  console.log(filteredExercises.length === 0);
-  // console.log(allExercise);
+  //console.log(filteredExercises.length === 0);
+  //console.log(allExercise);
 
   //states
   const [currentPage, setCurrentPage] = useState(1);
-  const exercisesNumber = filteredExercises.length;
+  const exercisesNumber =
+    filteredExercises.length === 0
+      ? allExercise.length
+      : filteredExercises.length;
   const exerciseCardPerPage = 10;
 
   const indexOfLastExerciseInCurrentPage =
@@ -24,6 +27,7 @@ function Exercises({ myRef }) {
   const currentPageExercises = (
     filteredExercises.length === 0 ? allExercise : filteredExercises
   ).slice(indexOfFirstExerciseInCurrentPage, indexOfLastExerciseInCurrentPage);
+  console.log(exercisesNumber / exerciseCardPerPage);
 
   const paginate = (e, value) => {
     setCurrentPage(value);

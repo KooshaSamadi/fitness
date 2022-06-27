@@ -23,6 +23,7 @@ export const ExercisesProvider = ({ children }) => {
     const fetchExercises = async () => {
       const data = await fetchAllExercies();
       setAllExercise(data);
+     // console.log(data);
     };
     fetchExercises();
   }, []);

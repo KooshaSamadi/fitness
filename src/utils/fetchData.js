@@ -1,12 +1,5 @@
 const bodyPartUrl = "https://exercisedb.p.rapidapi.com/exercises/bodyPartList";
 const allExercisesUrl = "https://exercisedb.p.rapidapi.com/exercises";
-const youtubeOptions = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
-    "X-RapidAPI-Host": "youtube-search-and-download.p.rapidapi.com",
-  },
-};
 const exersiceOptions = {
   method: "GET",
   headers: {
@@ -31,12 +24,4 @@ export const fetchAllBodyparts = async () => {
 export const fetchExerciseByID = async (id) => {
   const exerciseByIDUrl = `https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`;
   return await fetchData(exerciseByIDUrl, exersiceOptions);
-};
-export const fetchRelativeVideosFormYoutube = async (name) => {
-  const url = `https://youtube-search-and-download.p.rapidapi.com/search?query=${name}`;
-  return await fetchData(url, youtubeOptions);
-};
-export const fetchTargetMuscleExercise = async (target) => {
-  const url = `${allExercisesUrl}/target/${target}`;
-  return await fetchData(url, exersiceOptions);
 };
